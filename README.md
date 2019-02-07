@@ -1,1 +1,9 @@
-# github-org-issues-link
+# GitHub Organization Issues Link
+
+A Chrome extension that adds an *Issues* tab that lets you browse all issues across a GitHub organization's repos.
+
+![An example of an Issues link added to a GitHub organization's page](images/github-org-issues.png)
+
+## Attributions
+
+- Images for the extension icon: [Emoji One](https://www.emojione.com/)

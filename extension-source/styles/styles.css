@@ -1,0 +1,31 @@
+{
+  "name": "Github Organization Issues Explorer",
+  "description" : "See issues across all repos on organization pages.",
+  "permissions": ["declarativeContent,activeTab"],
+  "version": "1.0",
+  "manifest_version": 2,
+  "content_scripts": [{
+    "css": ["styles/styles.css"],
+    "js": ["scripts/content.js"],
+    "matches": ["https://github.com/*"]
+  }],
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon.png",
+      "32": "images/icon.png",
+      "48": "images/icon.png",
+      "128": "images/icon.png"
+    }
+  },
+  "background": {
+    "scripts": ["scripts/background.js"],
+    "persistent": false
+  },
+  "icons": {
+    "16": "images/icon.png",
+    "32": "images/icon.png",
+    "48": "images/icon.png",
+    "128": "images/icon.png"
+  }
+}
