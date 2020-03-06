@@ -55,7 +55,7 @@ ready( function(){
 
       let issuesLink = document.createElement( 'a' );
 
-      issuesLink.setAttribute( 'href', `https://github.com/search?q=org%3A${ orgName }&state=open&type=Issues&per_page=100&s=created` );
+      issuesLink.setAttribute( 'href', `https://github.com/search?q=org%3A${ orgName }+is%3Aissue&state=open&type=Issues` );
       issuesLink.innerHTML = 'Issues <span id="org-issues-counter" class="Counter"></span>';
       issuesLink.classList.add( 'pagehead-tabs-item' );
       orgnav.appendChild( issuesLink );

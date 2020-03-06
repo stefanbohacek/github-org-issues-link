@@ -55,16 +55,23 @@ ready( function(){
 
       let issuesLink = document.createElement( 'a' );
 
-      issuesLink.setAttribute( 'href', `https://github.com/search?q=org%3A${ orgName }&state=open&type=Issues&per_page=100&s=created` );
-      issuesLink.innerHTML = 'Issues <span id="org-issues-counter" class="Counter"></span>';
+      issuesLink.setAttribute( 'href', `https://github.com/search?q=org%3A${ orgName }+is%3Aissue&state=open&type=Issues` );
+      issuesLink.innerText = 'Issues';
       issuesLink.classList.add( 'pagehead-tabs-item' );
+
+      let issuesCounter = document.createElement( 'span' );
+
+      issuesCounter.id = 'org-issues-counter';
+      issuesCounter.classList.add( 'Counter' );
+
+      issuesLink.appendChild( issuesCounter );
       orgnav.appendChild( issuesLink );
 
       fetch( apiCallURL )
         .then( response => response.json() )
         .then( data => {
           if ( data && data.total_count ){
-            document.getElementById( 'org-issues-counter' ).innerHTML = formatNumber( data.total_count );
+            document.getElementById( 'org-issues-counter' ).innerText = formatNumber( data.total_count );
           }
         } ).catch( function( err ) {
           console.log( err.message );
