@@ -44,7 +44,7 @@ ready( function(){
     return '';
   }
 
-  let orgnav = document.getElementsByClassName( 'orgnav' );
+  let orgnav = document.getElementsByClassName( 'js-profile-tab-count-container' );
 
   if ( orgnav && orgnav.length > 0 ){
     orgnav = orgnav[0];
@@ -53,12 +53,17 @@ ready( function(){
     if ( orgName ){
       const apiCallURL = `https://api.github.com/search/issues?q=org:${ orgName }+state:open&per_page=100&sort=created&order=asc`
 
+      let issuesLinkWrapper = document.createElement( 'li' );
+      issuesLinkWrapper.classList.add( 'd-flex' );
+      issuesLinkWrapper.classList.add( 'js-responsive-underlinenav-item' );
+
       let issuesLink = document.createElement( 'a' );
 
       issuesLink.setAttribute( 'href', `https://github.com/search?q=org%3A${ orgName }+is%3Aissue&state=open&type=Issues` );
       issuesLink.innerHTML = 'Issues <span id="org-issues-counter" class="Counter"></span>';
-      issuesLink.classList.add( 'pagehead-tabs-item' );
-      orgnav.appendChild( issuesLink );
+      issuesLink.classList.add( 'UnderlineNav-item' );
+      issuesLinkWrapper.appendChild( issuesLink );
+      orgnav.querySelector('ul').appendChild( issuesLinkWrapper );
 
       fetch( apiCallURL )
         .then( response => response.json() )
