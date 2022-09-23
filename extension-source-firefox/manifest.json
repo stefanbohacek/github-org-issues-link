@@ -2,7 +2,7 @@
   "name": "Github Organization Issues Link",
   "description" : "Link to all issues across an organization's repos.",
   "homepage_url": "https://fourtonfish.com/project/github-organization-issues-link-chrome-extension/",
-  "version": "1.0",
+  "version": "1.1",
   "manifest_version": 2,
   "permissions": [
     "*://*.github.com/*",
