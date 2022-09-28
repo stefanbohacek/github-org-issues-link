@@ -2,7 +2,7 @@
   "name": "Github Organization Issues Link",
   "description" : "Link to all issues across an organization's repos.",
   "permissions": ["declarativeContent","activeTab"],
-  "version": "1.3.0",
+  "version": "1.4.0",
   "manifest_version": 2,
   "content_scripts": [{
     "css": ["styles/styles.css"],
