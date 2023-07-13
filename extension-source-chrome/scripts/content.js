@@ -85,7 +85,7 @@ ready( () => {
         dataValue: 'total_count'
       });
       addLink({
-        linkURL: `https://github.com/search?q=user%3A${ orgName }+label%3A%22help+wanted%22&type=Issues&ref=advsearch`,
+        linkURL: `https://github.com/search?q=user%3A${ orgName }+label%3A%22help+wanted%22&type=Issues&ref=advsearch&state=open&type=Issues`,
         linkHTML: `Help wanted`
       });
     }
