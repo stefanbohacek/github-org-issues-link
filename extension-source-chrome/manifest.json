@@ -1,15 +1,15 @@
 {
-  "name": "Github Organization Issues Link",
-  "description" : "Link to all issues across an organization's repos.",
+  "name": "GH Organization Issues Link",
+  "description" : "Link to all issues across an organization's GitHub repos.",
   "permissions": ["declarativeContent"],
-  "version": "1.4.2",
-  "manifest_version": 2,
+  "version": "1.5.0",
+  "manifest_version": 3,
   "content_scripts": [{
     "css": ["styles/styles.css"],
     "js": ["scripts/content.js"],
     "matches": ["https://github.com/*"]
   }],
-  "page_action": {
+  "action": {
     "default_popup": "popup.html",
     "default_icon": {
       "16": "images/icon-16.png",
@@ -19,8 +19,7 @@
     }
   },
   "background": {
-    "scripts": ["scripts/background.js"],
-    "persistent": false
+    "service_worker": "scripts/background.js"
   },
   "icons": {
     "16": "images/icon-16.png",
